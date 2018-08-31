@@ -109,7 +109,7 @@ class DistanceNetwork:
             eps = 1e-10
             similarities = []
             for support_image in tf.unstack(support_set, axis=0):
-                sum_support = tf.reduce_sum(tf.square(support_image), 1, keep_dims=True)
+                sum_support = tf.reduce_sum(tf.square(support_image), 1, keepdims=True)
                 support_magnitude = tf.rsqrt(tf.clip_by_value(sum_support, eps, float("inf")))
                 dot_product = tf.matmul(tf.expand_dims(input_image, 1), tf.expand_dims(support_image, 2))
                 dot_product = tf.squeeze(dot_product, [1, ])

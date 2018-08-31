@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 from one_shot_learning_network import *
 from experiment_builder import ExperimentBuilder
 import tensorflow.contrib.slim as slim
